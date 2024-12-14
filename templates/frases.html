@@ -2,49 +2,52 @@
 <html lang="en">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvel</title>
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/frases.css') }}">
-
+    <title>TESTIGOS</title>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+      crossorigin="anonymous">
+<!-- Font Awesome para íconos -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/frases.css') }}">
 </head>
 
-<body>
+<body class="conocenos-page">
+    {% include 'header.html' %}
+
     <div class="conteiner">
         <div class="item">
             <div class="quote">
                 <p><strong>Pamela (Profesora):</strong> <span>Me gustó mucho esta plataforma. La utilizo para que mis estudiantes aprendan más sobre el lenguaje de señas.</span></p>
-
             </div>
         </div>
         <div class="item">
             <div class="quote">
                 <p><strong>Fátima (Psicóloga):</strong> <span>Usualmente atiendo a pacientes sordomudos. Esta plataforma me ha permitido entenderlos mucho mejor.</span></p>
-
             </div>
         </div>
         <div class="item">
             <div class="quote">
                 <p><strong>Javier (Estudiante):</strong> <span>Esta plataforma me ha permitido aprender mucho y empatizar con las personas sordomudas.</span></p>
-
             </div>
         </div>
         <div class="item">
             <div class="quote">
                 <p><strong>Rosa (Madre):</strong> <span>Tengo una pequeña que es sordomuda. Esta plataforma me ha ayudado a mejorar y a comunicarme mejor con ella.</span></p>
-
             </div>
         </div>
         <div class="item">
             <div class="quote">
                 <p><strong>Felipe (Persona Sorda):</strong> <span>Soy una persona sorda, pero gracias a esta plataforma logro entenderme mejor con los demás.</span></p>
-
             </div>
         </div>
         <div class="item">
             <div class="quote">
                 <p><strong>Leyla (Universitaria):</strong> <span>Soy estudiante universitaria y probé esta página. Me pareció muy buena e interesante.</span></p>
-
             </div>
         </div>
     </div>

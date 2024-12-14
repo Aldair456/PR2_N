@@ -5,35 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Conócenos - Comunicación Inclusiva</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/conocenos.css') }}">
+  <!-- Estilos generales -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+  crossorigin="anonymous">
+<!-- Font Awesome para íconos -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/conocenos.css') }}">
 </head>
 
 <body>
-  <header class="banner">
-    <div class="wrapper1240">
-      <div class="banner-text">
-        <div class="info-banner">
-          <div class="info-banner-logo">
-            <!-- Puedes agregar un logo aquí -->
-            <img src="https://via.placeholder.com/150x50?text=Logo" alt="Logo de Comunicación Inclusiva" />
-          </div>
-          <div class="info-banner-title">
-            CONÓCENOS
-          </div>
-          <div class="info-banner-description">
-            Somos una Inteligencia Artificial inclusiva que busca reducir las barreras comunicativas en la atención médica de
-            pacientes sordos, garantizando una comunicación efectiva durante todo su proceso médico.
-          </div>
-          <button class="info-banner-button">
-            Saber más
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="banner-image digital-comics-custom-img"></div>
-  </header>
+  {% include 'header.html' %} <!-- Incluir el header común -->
 
   <main class="container">
+    <!-- Sección de información general -->
     <section class="section">
       <h2 class="section-title">¿Sabías que?</h2>
       <div class="section-content">
@@ -44,6 +30,7 @@
       </div>
     </section>
 
+    <!-- Sección de la misión -->
     <section class="section">
       <h2 class="section-title">Nuestra Misión</h2>
       <div class="section-content">
@@ -53,6 +40,7 @@
       </div>
     </section>
 
+    <!-- Sección de razones para elegirnos -->
     <section class="section">
       <h2 class="section-title">¿Por Qué Elegirnos?</h2>
       <div class="section-content">
@@ -61,6 +49,7 @@
       </div>
     </section>
 
+    <!-- Sección de testimonios -->
     <section class="section testimonial">
       <h2 class="section-title">Testimonios</h2>
       <div class="section-content">
@@ -75,6 +64,7 @@
 
   <footer class="footer">
     <div class="footer-content">
+      <!-- Imagen representativa -->
       <img src="https://claso.net/image/catalog/blog/2022/post-261/las-personas-sordas-son-mudas-lisatdo.jpg" alt="Imagen Representativa" class="footer-image">
       <p>&copy; 2024 Comunicación Inclusiva. Todos los derechos reservados.</p>
     </div>

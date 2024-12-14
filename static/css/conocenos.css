@@ -179,56 +179,5 @@ body {
   }
 }
 
- body {
-            background-color: #f0f9fc; /* Fondo celeste muy claro */
-            color: #333; /* Texto oscuro para mejor legibilidad */
-        }
-        header, nav, footer {
-            background-color: #e0f7fa; /* Fondo celeste pastel */
-        }
-        nav a.navbar-brand {
-            font-weight: bold;
-        }
-        nav a.nav-link {
-            color: #003f5c !important; /* Texto más oscuro en el nav */
-        }
-        nav a.nav-link:hover {
-            color: #022f40 !important; /* Oscurece un poco más al pasar el mouse */
-        }
-        .bg-info {
-            background-color: #b2ebf2!important; /* Azul celeste más claro para la franja */
-        }
-        .center-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        #cameraContainer {
-            background: #fff;
-            border: 2px solid #b2ebf2;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        #controls button {
-            margin: 5px;
-        }
-        #videos {
-            margin-top: 50px;
-        }
-        #videos h2 {
-            margin-bottom: 30px;
-        }
-        #conocenos {
-            margin-top: 50px;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            border: 2px solid #b2ebf2;
-        }
-        footer {
-            background-color: #e0f7fa;
-            border-top: 1px solid #b2ebf2;
-        }
 
 

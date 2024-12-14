@@ -1,135 +1,162 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;1,400");
+
+/* General Reset */
 * {
     box-sizing: border-box;
- }
- body{
+}
+
+.conocenos-page body {
     margin: 0;
     font-family: 'Asap', 'Poppins', sans-serif;
-    text-shadow: #000 0 0 10px;
- }
- .conteiner{
+    background-color: #111; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+}
+
+/* Contenedor principal */
+.conocenos-page .conteiner {
     display: flex;
     flex-direction: column;
-    width: 100wn;
+    width: 100vw;
     height: 100vh;
     background-color: #111;
- }
- @media (min-width:1024px){
-    .conteiner{
+}
+
+@media (min-width: 1024px) {
+    .conocenos-page .conteiner {
         flex-direction: row;
     }
- }
- .item{
+}
+
+/* Elementos individuales */
+.conocenos-page .item {
     position: relative;
-    flex: calc(100vw/6) 1 1;
+    flex: calc(100vw / 6) 1 1;
     background-size: cover;
     overflow: hidden;
     filter: saturate(90%);
-    transition: 1s;
- }
- .item:before {
-content: "";
-position: absolute;
-inset: 0;
-background: linear-gradient(25deg, rgba(0,0,0,.9) , rgba(0,0,0,0));
- }
- .item:not(:last-child) {
+    transition: flex-basis 1s ease, filter 1s ease;
+}
+
+.conocenos-page .item:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(25deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+}
+
+.conocenos-page .item:not(:last-child) {
     border-bottom: 1px solid #ccc;
     animation: borderPulse 5s infinite;
- }
- @media (min-width: 1024px) {
-    .item:not(:last-child) {
-      border-right: 1px solid #ccc;
-      border-bottom: none;
-   }
- }
- .item:hover {
+}
+
+@media (min-width: 1024px) {
+    .conocenos-page .item:not(:last-child) {
+        border-right: 1px solid #ccc;
+        border-bottom: none;
+    }
+}
+
+.conocenos-page .item:hover {
     flex-basis: 40%;
     filter: saturate(120%);
- }
-  @media (min-width: 1024px) {
-    .item:hover {
-      flex-basis: 75%;
-   }
- }
- .item:hover .quote {
+}
+
+@media (min-width: 1024px) {
+    .conocenos-page .item:hover {
+        flex-basis: 75%;
+    }
+}
+
+.conocenos-page .item:hover .quote {
     opacity: 1;
     transform: translateX(0);
- }
- .item:nth-child(1) {
-   background-image: url("https://media.istockphoto.com/id/1748175747/es/v%C3%ADdeo/rostro-negocio-y-mujer-negra-feliz-con-los-brazos-cruzados-en-la-oficina-el-lugar-de-trabajo.jpg?s=640x640&k=20&c=CibHsl3J6sW5T6FotFdStXKynXqZyNioRhWkfQQcMB4=");
-   background-position: 72% 35%;
 }
-.item:nth-child(2) {
+
+/* Imágenes específicas de fondo */
+.conocenos-page .item:nth-child(1) {
+    background-image: url("https://media.istockphoto.com/id/1748175747/es/v%C3%ADdeo/rostro-negocio-y-mujer-negra-feliz-con-los-brazos-cruzados-en-la-oficina-el-lugar-de-trabajo.jpg?s=640x640&k=20&c=CibHsl3J6sW5T6FotFdStXKynXqZyNioRhWkfQQcMB4=");
+    background-position: 72% 35%;
+}
+.conocenos-page .item:nth-child(2) {
     background-image: url("https://st5.depositphotos.com/1158045/64935/i/450/depositphotos_649358026-stock-photo-portrait-african-american-smiling-businesswoman.jpg");
     background-position: 60% 8%;
- }
- .item:nth-child(3) {
+}
+.conocenos-page .item:nth-child(3) {
     background-image: url("https://www.concortv.gob.pe/wp-content/uploads/2023/08/WhatsApp-Image-2023-08-18-at-14.04.27-576x1024.jpeg");
     background-position: 52% 8%;
- }
- .item:nth-child(4) {
+}
+.conocenos-page .item:nth-child(4) {
     background-image: url("https://www.audiocentros.com/wp-content/uploads/2016/10/Dia-Personas-Sordas.jpg");
     background-position: 45% 8%;
- }
- .item:nth-child(5) {
+}
+.conocenos-page .item:nth-child(5) {
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw9ZnNsqlKXYpD712jcYrCSVGLPNFZpazmPFJm9OppGXt2s42hLsQcvIcpIYD-ISGdVW8&usqp=CAU");
     background-position: 45% 25%;
- }
- .item:nth-child(6) {
+}
+.conocenos-page .item:nth-child(6) {
     background-image: url("https://elements-resized.envatousercontent.com/elements-video-cover-images/files/a0ac82f4-0506-4750-a401-2b91f32a9e12/inline_image_preview.jpg?w=500&cf_fit=cover&q=85&format=auto&s=75806740bf79afe81bf41b70ac3a130645002263d837f00605491e24e032c7ed");
     background-position: 65% 2%;
- }
- .quote {
+}
+
+/* Estilo de las citas */
+.conocenos-page .quote {
     position: absolute;
     color: #fff;
     bottom: 35%;
     left: 5rem;
     width: calc(100% - 10rem);
     opacity: 0;
-    transition: 1s;
+    transition: opacity 1s ease, transform 1s ease;
     transform: translateX(50%);
- }
-  @media (min-width: 512px) {
-    .quote {
-      left: 15%;
-      bottom: 35%;
-      width: 20vw;
-   }
- }
-  @media (min-width: 1024px) {
-    .quote {
-      left: 15%;
-      bottom: 35%;
-      width: 30vw;
-   }
- }
-  .quote p {
+}
+
+@media (min-width: 512px) {
+    .conocenos-page .quote {
+        left: 15%;
+        bottom: 35%;
+        width: 20vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .conocenos-page .quote {
+        left: 15%;
+        bottom: 35%;
+        width: 30vw;
+    }
+}
+
+.conocenos-page .quote p {
     position: relative;
     display: inline-block;
     margin-bottom: 1.7rem;
     font-size: 1.4rem;
-    text-wrap: balance;
     font-style: italic;
- }
-  .quote p:before, .quote p:after {
+    text-wrap: balance;
+}
+
+.conocenos-page .quote p:before,
+.conocenos-page .quote p:after {
     position: absolute;
     font-size: 5.5rem;
     opacity: 0.6;
- }
-  .quote p:before {
+}
+
+.conocenos-page .quote p:before {
     content: "“";
     top: 4rem;
     left: -2rem;
     transform: translate(-100%, -100%);
- }
-  .quote p:after {
+}
+
+.conocenos-page .quote p:after {
     content: "”";
     bottom: 2rem;
     right: -2rem;
     transform: translate(100%, 100%);
- }
-  .quote span {
+}
+
+.conocenos-page .quote span {
     position: absolute;
     bottom: -2rem;
     right: 0;
@@ -137,19 +164,22 @@ background: linear-gradient(25deg, rgba(0,0,0,.9) , rgba(0,0,0,0));
     font-size: 1.2rem;
     font-weight: bold;
     transform: translate(4rem, 100%);
- }
-  .quote span:before {
+}
+
+.conocenos-page .quote span:before {
     content: "—";
     margin-right: 0.7rem;
- }
-  @keyframes borderPulse {
+}
+
+/* Animación del borde */
+@keyframes borderPulse {
     0%, 100% {
-      border-color: rgba(204, 204, 204, 1);
-   }
+        border-color: rgba(204, 204, 204, 1);
+    }
     25%, 75% {
-      border-color: rgba(204, 204, 255, 0.9);
-   }
+        border-color: rgba(204, 204, 255, 0.9);
+    }
     50% {
-      border-color: rgba(204, 204, 255, 0.5);
-   }
- },
+        border-color: rgba(204, 204, 255, 0.5);
+    }
+}
