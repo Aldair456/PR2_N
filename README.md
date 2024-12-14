@@ -34,10 +34,7 @@ NumPy - Utilizado para generar la normalización de coordenadas.
 Por favor, contacta a Contacto para obtener detalles sobre nuestro código de conducta y el proceso para enviar solicitudes de extracción.
 
 ### Autores ✒️
-Cesar Ortiz - Cesar Ortiz
-Jahaziel Hernandez - Jahaziel Hernandez
-Licencia 📄
-Este proyecto está bajo la Licencia Creative Commons Attribution. Consulta el archivo LICENSE.md para obtener más detalles.
+
 
 ### Expresiones de Gratitud 🎁
 Esperamos que puedas contribuir y crear nuevos avances con este proyecto 📢.
