@@ -1,0 +1,95 @@
+body {
+    background-color: #f0f8ff; /* Color de fondo azul claro */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    color: #004080; /* Color de texto azul oscuro */
+}
+
+.navbar {
+    background-color: #007bff !important; /* Color de fondo de la barra de navegación */
+}
+
+.nav-link {
+    color: #cce6ff !important; /* Color de los enlaces de navegación */
+}
+
+.nav-link:hover {
+    color: #ffffff !important; /* Color de los enlaces al pasar el mouse */
+}
+
+#controls .btn-primary {
+    background-color: #004080; /* Color de los botones de control */
+    border-color: #004080;
+}
+
+#controls .btn-primary:hover {
+    background-color: #003366; /* Color de los botones de control al pasar el mouse */
+    border-color: #003366;
+}
+
+footer {
+    background-color: #007bff; /* Color de fondo del pie de página */
+    color: #ffffff; /* Color de texto del pie de página */
+}
+
+/* Centrar sección de activar cámara */
+.center-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* Ajusta la altura según sea necesario */
+    text-align: center;
+    padding: 20px;
+}
+
+.center-section section {
+    background: #ffffff; /* Fondo blanco para resaltar */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#cameraContainer {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#videoFeed {
+    width: 100%; /* Ajusta el tamaño al contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    max-width: 640px; /* Limita el ancho máximo */
+}
+
+#controls .btn-success {
+    background-color: #28a745; /* Color del botón de encender */
+    border-color: #28a745;
+}
+
+#controls .btn-danger {
+    background-color: #dc3545; /* Color del botón de apagar */
+    border-color: #dc3545;
+}
+
+#controls .btn-success:hover {
+    background-color: #218838; /* Color al pasar el mouse */
+    border-color: #1e7e34;
+}
+
+#controls .btn-danger:hover {
+    background-color: #c82333; /* Color al pasar el mouse */
+    border-color: #bd2130;
+}
+
+/* Estilo para el slider de videos */
+#videos {
+    text-align: center;
+    margin: 20px;
+}
+
+#videos h2 {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor de Lengua de Señas</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+          crossorigin="anonymous">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            background-color: #f0f9fc; /* Fondo celeste muy claro */
+            color: #333; /* Texto oscuro para mejor legibilidad */
+        }
+        header, nav, footer {
+            background-color: #e0f7fa; /* Fondo celeste pastel */
+        }
+        nav a.navbar-brand {
+            font-weight: bold;
+        }
+        nav a.nav-link {
+            color: #003f5c !important; /* Texto más oscuro en el nav */
+        }
+        nav a.nav-link:hover {
+            color: #022f40 !important; /* Oscurece un poco más al pasar el mouse */
+        }
+        .bg-info {
+            background-color: #b2ebf2!important; /* Azul celeste más claro para la franja */
+        }
+        .center-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #cameraContainer {
+            background: #fff;
+            border: 2px solid #b2ebf2;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #controls button {
+            margin: 5px;
+        }
+        #videos {
+            margin-top: 50px;
+        }
+        #videos h2 {
+            margin-bottom: 30px;
+        }
+        #conocenos {
+            margin-top: 50px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #b2ebf2;
+        }
+        footer {
+            background-color: #e0f7fa;
+            border-top: 1px solid #b2ebf2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e0f7fa;">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-hands mr-2"></i>Traductor de Lengua de Señas
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-right" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="conocenos.html"><i class="fas fa-users mr-1"></i>Conócenos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="frases.html"><i class="fas fa-comment-dots mr-1"></i>Testigos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="C:\Users\ALDAIR\Visual\Tarea1\DBP\Loing\Login.html">
+                            <i class="fas fa-sign-in-alt mr-1"></i>Sign In
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Imagen debajo de la barra de navegación -->
+        <div class="text-center my-3">
+            <img src="https://mediapipe.dev/images/mobile/hand_crops.png" 
+                 alt="Imagen de manos" 
+                 class="img-fluid" style="max-width: 100%; height: auto;">
+        </div>
+    </header>
+
+    <!-- Franja con texto introductorio -->
+    <div class="text-center py-3 bg-info text-dark">
+        <p class="mb-0">
+            Somos un equipo dedicado a facilitar la comunicación entre personas oyentes y personas sordas, desarrollando 
+            herramientas accesibles y fáciles de usar para todos.
+            <br><br>
+            Nuestro objetivo es crear una plataforma inclusiva que permita a las personas aprender y traducir lengua 
+            de señas en tiempo real.
+        </p>
+    </div>
+
+    <main class="container my-5">
+        <div class="center-section mb-5">
+            <section>
+                <h2 class="text-center mb-4">Activar cámara</h2>
+                <div id="cameraContainer" class="text-center">
+                    <img id="videoFeed" src="https://via.placeholder.com/640x360.png?text=Esperando+video" alt="Esperando Video"  class="img-fluid">
+                </div>
+                <div id="controls" class="mt-3 text-center">
+                    <button id="startButton" class="btn btn-success">
+                        <i class="fas fa-video mr-1"></i>Encender cámara
+                    </button>
+                    <button id="stopButton" class="btn btn-danger">
+                        <i class="fas fa-video-slash mr-1"></i>Apagar cámara
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <section id="videos">
+            <h2 class="text-center">Únete a MedEscucha IA</h2>
+            <p class="text-center mb-4">Descubre más recursos y tutoriales sobre lengua de señas.</p>
+            <div id="slider" class="text-center mb-3">
+                <div id="controls" class="d-inline-block">
+                    <button id="prev" class="btn btn-primary mr-2">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="next" class="btn btn-primary">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="current" class="text-center mb-3"></div>
+            <div id="videos-container" class="text-center"></div>
+        </section>
+
+        <!-- Sección Conócenos -->
+        <section id="conocenos" class="mt-5">
+            <h2 class="text-center mb-4">Conócenos</h2>
+            <p>
+                Somos un equipo dedicado a facilitar la comunicación entre personas oyentes y personas sordas, 
+                desarrollando herramientas accesibles y fáciles de usar para todos. 
+            </p>
+            <p>
+                Nuestro objetivo es crear una plataforma inclusiva que permita a las personas aprender y traducir lengua 
+                de señas en tiempo real.
+            </p>
+        </section>
+    </main>
+
+    <footer class="text-center py-3">
+        <p class="mb-0">&copy; 2024 Traductor de Lengua de Señas</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+            integrity="sha384-UO2eT0CpHqdSJQ6hJTYlgMJBFpU9Oz7Jp6e6l6N/R6iEQBzI4h+66tuOGtTj62Jf" 
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+            integrity="sha384-ChfqqxuZUCnJS3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+            crossorigin="anonymous"></script>
+</body>
+</html>
